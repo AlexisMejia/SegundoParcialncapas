@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista Libros</title>
+</head>
+<body>
+
+<table>
+		<thead>
+			<th>Codigo</th>
+			<th>Titulo</th>
+			<th>Autor</th>
+			<th>ISBN</th>
+			<th>Fecha ingreso</th>
+			<th>Categoria</th>
+		</thead>
+		<th:block th:each="lib, row:${libros}">
+			<tr>
+				<th th:text="${lib.codigoLibro}" />
+				<th th:text="${lib.nameTitulo}" />
+				<th th:text="${lib.nameAutor}" />
+				<th th:text="${lib.sIsbn}" />
+				<th th:text="${lib.getFechaDelegate}" />
+				<th th:text="${lib.categoria.nameCategoria}" />
+			</tr>
+		</th:block>
+	</table>
+	
+	<a href="/index">Go back!</a>
+</body>
+</html>
